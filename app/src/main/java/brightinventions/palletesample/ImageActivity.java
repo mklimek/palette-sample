@@ -29,9 +29,9 @@ public class ImageActivity extends Activity {
                 Palette.generateAsync(bitmap, new Palette.PaletteAsyncListener() {
                     public void onGenerated(Palette palette) {
                         image.setImageBitmap(bitmap);
-                        int gray = getResources().getColor(R.color.black);
-                        toolbar.setBackgroundColor(palette.getLightVibrantColor(gray));
-                        toolbar.setTitleTextColor(palette.getDarkMutedColor(gray));
+                        int defaultColor = getResources().getColor(R.color.black);
+                        toolbar.setBackgroundColor(palette.getLightVibrantColor(defaultColor));
+                        toolbar.setTitleTextColor(palette.getDarkMutedColor(defaultColor));
                         toolbar.setTitle(getString(R.string.app_name));
                     }
                 });
